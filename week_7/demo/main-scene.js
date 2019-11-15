@@ -27,7 +27,12 @@ window.Assignment_Four_Scene = window.classes.Assignment_Four_Scene =
             this.materials =
                 {
                     phong: context.get_instance(Phong_Shader).material(Color.of(1, 1, 0, 1)),
-                    box_1: context.get_instance(Phong_Shader).material(Color.of(1, 1, 0, 1)),
+                    box_1: context.get_instance(Texture_Rotate).material(
+                        Color.of(0, 0, 0, 1),{
+                            ambient:1,//ambient of texture, enable to see on the screen
+                            texture.context.get_instance("assets/box.png",false)
+                        }
+                    ),          
                 };
 
             this.lights = [new Light(Vec.of(-5, 5, 5, 1), Color.of(0, 1, 1, 1), 100000)];
